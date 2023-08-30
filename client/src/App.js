@@ -5,9 +5,9 @@ return (
   <div className="container">Diga aí, mundo!
   <form>
   <div className="mb-3">
-    <label for="exampleInputEmail1" className="form-label">Email address</label>
+    <label for="exampleInputEmail1" className="form-label">Coloque seu de e-mail</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+    <div id="emailHelp" className="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
   </div>
   <div className="mb-3">
     <label for="exampleInputPassword1" className="form-label">Password</label>
@@ -15,9 +15,9 @@ return (
   </div>
   <div className="mb-3 form-check">
     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-    <label className="form-check-label" for="exampleCheck1">Check me out</label>
+    <label className="form-check-label" for="exampleCheck1">Mantenha Logado</label>
   </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary">Enviar</button>
 </form>
 </div>
  )
