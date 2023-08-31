@@ -1,5 +1,4 @@
-const { Pool } = require ( "pg" )
-// import { Pool } from "pg";
+const { Pool } = require("pg");
 
 const pool = new Pool({
   user: "postgres",
@@ -9,20 +8,35 @@ const pool = new Pool({
   database: "db_login_system",
 });
 
-const createTblQry = `CREATE TABLE accounts (
+const createDbQry = `CREATE DATABASE db_login_system`;
+const createTblQry = `CREATE TABLE IF NOT EXISTS accounts (
   user_id serial PRIMARY KEY,
-  username VARCHAR ( 50 ) UNIQUE NOT NULL,
-  password VARCHAR ( 50 ) UNIQUE NOT NULL);`
+  username VARCHAR(50) UNIQUE NOT NULL,
+  password VARCHAR(50) NOT NULL);`;
 
+(async () => {
+  try {
+    // Verifica a existência do banco de dados
+    const checkDbExistsQry = `SELECT 1 FROM pg_database WHERE datname = 'db_login_system'`;
+    const result = await pool.query(checkDbExistsQry);
+    const dbExists = result.rowCount > 0;
 
-pool
-  .query(createTblQry)
-  .then((Response) => {
-    console.log("Table Created");
-    console.log(response);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+    if (!dbExists) {
+      // Cria o banco de dados "db_login_system"
+      await pool.query(createDbQry);
+      console.log("Database created successfully.");
+    } else {
+      console.log("Database already exists.");
+    }
 
-module.export = pool;
+    // Conecta-se ao banco de dados "db_login_system"
+    pool.database = "db_login_system";
+
+    // Cria a tabela "accounts"
+    await pool.query(createTblQry);
+
+    console.log("Table created successfully.");
+  } catch (error) {
+    console.error("Error:", error);
+  }
+})();
