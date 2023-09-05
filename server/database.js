@@ -5,7 +5,7 @@ const pool = new Pool({
   password: "crtb@300419!",
   host: "localhost",
   port: 5432,
-  database: "db_login_system",
+  database: "",
 });
 
 const createDbQry = `CREATE DATABASE db_login_system`;
@@ -26,7 +26,7 @@ const createTblQry = `CREATE TABLE IF NOT EXISTS accounts (
       await pool.query(createDbQry);
       console.log("Database created successfully.");
     } else {
-      console.log("Database already exists.");
+      console.log("Database already existsBanco já Existe.");
     }
 
     // Conecta-se ao banco de dados "db_login_system"
@@ -35,8 +35,8 @@ const createTblQry = `CREATE TABLE IF NOT EXISTS accounts (
     // Cria a tabela "accounts"
     await pool.query(createTblQry);
 
-    console.log("Table created successfully.");
+    console.log("Tabela Criada com Sucesso.");
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Erro:", error);
   }
 })();
