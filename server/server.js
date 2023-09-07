@@ -8,10 +8,10 @@ app.use(express.json());
 app.use(cors());
 
 const pool = new Pool({
-  user: "postgres",
-  password: "crtb@300419!",
-  host: "localhost",
-  port: 5432,
+  user: process.env.USER,
+  password:  process.env.PASSWORD,
+  host:  process.env.HOST,
+  port:  process.env.PORT,
   database: "db_login_system", // Verifique o nome do seu banco de dados
 });
 
