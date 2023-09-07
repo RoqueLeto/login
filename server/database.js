@@ -5,7 +5,7 @@ const pool = new Pool({
   password: "crtb@300419!",
   host: "localhost",
   port: 5432,
-  database: "",
+  database: "db_login_system",
 });
 
 const createDbQry = `CREATE DATABASE db_login_system`;
@@ -16,6 +16,7 @@ const createTblQry = `CREATE TABLE IF NOT EXISTS accounts (
 
 (async () => {
   try {
+
     // Verifica a existência do banco de dados
     const checkDbExistsQry = `SELECT 1 FROM pg_database WHERE datname = 'db_login_system'`;
     const result = await pool.query(checkDbExistsQry);
