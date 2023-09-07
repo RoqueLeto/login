@@ -1,7 +1,7 @@
 const { Pool } = require("pg");
 
 require('dotenv').config() 
-c//onsole.log(process.env)  // remova isto depois de confirmar que está funcionando
+//console.log(process.env)  // remova isto depois de confirmar que está funcionando
 
 const mainPool = new Pool({
   user: process.env.USER,
