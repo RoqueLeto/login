@@ -1,10 +1,13 @@
 const { Pool } = require("pg");
 
+require('dotenv').config() 
+c//onsole.log(process.env)  // remova isto depois de confirmar que está funcionando
+
 const mainPool = new Pool({
-  user: "postgres",
-  password: "crtb@300419!",
-  host: "localhost",
-  port: 5432,
+  user: process.env.USER,
+  password:  process.env.PASSWORD,
+  host:  process.env.HOST,
+  port:  process.env.PORT,
   database: "postgres", // Use o banco de dados "postgres" para criar o novo banco
 });
 
@@ -22,10 +25,10 @@ const createTblQry = `CREATE TABLE IF NOT EXISTS accounts (
 
     // Agora, você pode criar um novo pool para se conectar ao banco de dados "db_login_system"
     const pool = new Pool({
-      user: "postgres",
-      password: "crtb@300419!",
-      host: "localhost",
-      port: 5432,
+      user: process.env.USER,
+      password:  process.env.PASSWORD,
+      host:  process.env.HOST,
+      port:  process.env.PORT,
       database: "db_login_system",
     });
 
