@@ -11,7 +11,7 @@
 <body>
   <main>
     <section class="forms-area">
-      <form action="#" id="register-form">
+      <form action="http://localhost:3000/register" method="POST" id="register-form">
         <div class="forms-header">
           <h1>Crie seu acesso</h1>
         </div>
@@ -30,30 +30,20 @@
                 required>
               <span class="span-required">O nome deve ter no mínimo 3 caractéres</span>
             </div>
-
             <div class="password-input-area">
               <label>Senha</label>
               <input type="password" name="password" id="password-user-input" placeholder="Digite sua senha"
                 class="input-required" required>
               <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
             </div>
-            <div class="passsword-isEquals">
-              <label>Confirme sua senha</label>
-              <input type="password" placeholder="Repita sua senha" class="input-required" required
-                id="passsword-isEquals">
-              <span class="span-required">As senhas devem ser iguais</span>
-            </div>
-
           </div>
           <div class="button-area">
             <input type="submit" id="btn" value="Cadastrar">
           </div>
         </div>
-
       </form>
     </section>
   </main>
-  <script src="./js/index.js"></script>
 </body>
 
 </html>
