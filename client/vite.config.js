@@ -1,15 +1,14 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
-export default defineConfig({
+const config = defineConfig({
   plugins: [react()],
-})
-module.exports = {
   build: {
     outDir: './dist',
     rollupOptions: {
       external: ['vue'],
     },
   },
-};
+});
+
+export default config;
