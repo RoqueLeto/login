@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Project</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuário</title>
+</head>
+<body>
+    <form id="register-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email-user-input" name="email" class="email-user-input" required>
+        
+        <label for="password">Senha:</label>
+        <input type="password" id="password-user-input" name="password" required>
+        
+        <label for="passwordConfirm">Confirmar Senha:</label>
+        <input type="password" id="password-isEquals" name="passwordConfirm" required>
+        
+        <button type="button" id="btn">Registrar</button>
+        <span class="span-required"></span>
+    </form>
+    
+    <script>
+        // Código JavaScript do Cliente
+        const btn = document.getElementById("btn");
+        const registerForm = document.getElementById("register-form");
+        const emailInput = document.querySelector(".email-user-input");
+        const passwordInput = document.querySelector("#password-user-input");
+        const passwordConfirm = document.querySelector("#password-isEquals");
+        const spans = document.querySelectorAll(".span-required");
+
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            
+            function isPasswordTheSame() {
+                return passwordInput.value === passwordConfirm.value;
+            }
+            
+            if (isPasswordTheSame()) {
+                const formData = new FormData(registerForm);
+                const data = Object.fromEntries(formData);
+                
+                fetch("http://localhost:3000/cadastrar", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                })
+                .then(response => response.json())
+                .then(data => console.log(data));
+            } else {
+                // Tratar caso as senhas não sejam iguais
+            }
+        });
+    </script>
+</body>
 </html>
+

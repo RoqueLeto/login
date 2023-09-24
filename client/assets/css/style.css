@@ -28,7 +28,7 @@ li {
 }
 
 .forms-header h1 {
-    font-size: 4em;
+    font-size: 3em;
 
 
 }
@@ -137,4 +137,36 @@ div.button-area {
     flex-direction: column;
     align-items: center;
     gap: 0.5em;
+}
+/* style.css */
+/* Estilos para o cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3cm;
+    padding: 0 1cm;
+    background-color: #0073e6; /* Cor de fundo do cabeçalho */
+}
+
+/* Estilos para a caixa de usuário e senha */
+.user-box {
+    display: flex;
+    align-items: center;
+    color: white; /* Cor do texto */
+}
+
+/* Estilos para a logomarca */
+.logo {
+    width: 100px; /* Largura da logomarca */
+    height: auto;
+}
+
+/* Estilos para o botão */
+.login-button {
+    background-color: #fbff00; /* Cor de fundo do botão */
+    color: rgb(0, 0, 0); /* Cor do texto do botão */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
