@@ -1,58 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+  <head>
 <head>
-    <meta charset="UTF-8">
-    <title>Registro de Usuário</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Project</title>
+  </head>
+  <body>
+    <!-- Inclua o arquivo CSS externo -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <form id="register-form">
-        <label for="email">Email:</label>
-        <input type="email" id="email-user-input" name="email" class="email-user-input" required>
-        
-        <label for="password">Senha:</label>
-        <input type="password" id="password-user-input" name="password" required>
-        
-        <label for="passwordConfirm">Confirmar Senha:</label>
-        <input type="password" id="password-isEquals" name="passwordConfirm" required>
-        
-        <button type="button" id="btn">Registrar</button>
-        <span class="span-required"></span>
-    </form>
-    
-    <script>
-        // Código JavaScript do Cliente
-        const btn = document.getElementById("btn");
-        const registerForm = document.getElementById("register-form");
-        const emailInput = document.querySelector(".email-user-input");
-        const passwordInput = document.querySelector("#password-user-input");
-        const passwordConfirm = document.querySelector("#password-isEquals");
-        const spans = document.querySelectorAll(".span-required");
+    <!-- Cabeçalho -->
+    <header>
+        <!-- Logomarca (lado esquerdo) -->
+        <img src="sua_logomarca.png" alt="Logomarca" class="logo" />
 
-        btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            
-            function isPasswordTheSame() {
-                return passwordInput.value === passwordConfirm.value;
-            }
-            
-            if (isPasswordTheSame()) {
-                const formData = new FormData(registerForm);
-                const data = Object.fromEntries(formData);
-                
-                fetch("http://localhost:3000/cadastrar", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(data),
-                })
-                .then(response => response.json())
-                .then(data => console.log(data));
-            } else {
-                // Tratar caso as senhas não sejam iguais
-            }
-        });
-    </script>
+        <!-- Texto dinâmico alinhado à direita -->
+        <div class="header-text">
+            <h1 style="text-align: right;">Sua diversão começa aqui!!!</h1>
+        </div>
+
+        <!-- Botão "Entrar" com hiperlink para o arquivo login.html -->
+        <a href="login.html" class="login-button">Entrar</a>
+    </header>
+
+    <!-- Conteúdo da página -->
+    <div id="root"></div>
+  </body>
+</html>
 </body>
 </html>
-

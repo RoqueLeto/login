@@ -28,7 +28,7 @@ li {
 }
 
 .forms-header h1 {
-    font-size: 3em;
+    font-size: 4em;
 
 
 }
@@ -138,35 +138,50 @@ div.button-area {
     align-items: center;
     gap: 0.5em;
 }
-/* style.css */
+
 /* Estilos para o cabeçalho */
 header {
+    background-color: #3498db; /* Cor de fundo azul */
+    color: #fff; /* Cor do texto branco */
+    padding: 20px; /* Espaçamento interno */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 3cm;
-    padding: 0 1cm;
-    background-color: #0073e6; /* Cor de fundo do cabeçalho */
 }
 
-/* Estilos para a caixa de usuário e senha */
-.user-box {
-    display: flex;
-    align-items: center;
-    color: white; /* Cor do texto */
-}
-
-/* Estilos para a logomarca */
 .logo {
-    width: 100px; /* Largura da logomarca */
+    max-width: 100px; /* Largura máxima da logomarca */
     height: auto;
 }
 
-/* Estilos para o botão */
+/* Estilos para o texto dinâmico */
+.header-text {
+    flex-grow: 1;
+    text-align: right;
+}
+
+/* Estilos para o botão "Entrar" */
 .login-button {
-    background-color: #fbff00; /* Cor de fundo do botão */
-    color: rgb(0, 0, 0); /* Cor do texto do botão */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+    background-color: #ffd500; /* Cor de fundo verde */
+    color: #000000; /* Cor do texto branco */
+    text-decoration: none; /* Remover sublinhado do link */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Borda arredondada */
+}
+
+/* Estilize a logomarca dentro do botão para adicionar um ícone */
+.login-button img {
+    vertical-align: middle; /* Alinhar verticalmente a imagem */
+    margin-right: 5px; /* Espaçamento à direita da imagem */
+}
+
+/* Estilos para o conteúdo da página */
+#root {
+    padding: 20px; /* Espaçamento interno */
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    margin: 0; /* Remova as margens padrão */
 }

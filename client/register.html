@@ -4,46 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bem vindo a GameSpace</title>
+  <title>GameSpace</title>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-  <header>
-    <img src="sua_logomarca.png" alt="Logomarca" class="logo" />
-    <div class="header-text">
-      <h1 style="text-align: right;">Sua diversão começa aqui!!!</h1>
-    </div>
-    <a href="login.html" class="login-button">Entrar</a>
-  </header>
-  
   <main>
     <section class="forms-area">
-      <form id="register-form">
+      <form action="#" id="register-form">
         <div class="forms-header">
-          <h1>Crie seu acesso</h1>
+          <h1>Cadastro</h1>
         </div>
-        
+
         <div class="forms-body">
           <div class="inputs-area">
             <div class="email-input-area">
               <label>E-mail</label>
               <input type="email" name="email" id="email-user-input" placeholder="Digite seu e-mail"
-                     class="input-required" required>
+                class="input-required" required>
               <span class="span-required">Digite um e-mail válido</span>
             </div>
-            
             <div class="name-input-area">
               <label>Nome</label>
               <input type="text" name="name" id="name-user-input" placeholder="Digite seu nome" class="input-required"
-                     required>
-              <span class="span-required">O nome deve ter no mínimo 3 caracteres</span>
+                required>
+              <span class="span-required">O nome deve ter no minimo 3 caractéres</span>
             </div>
-            
+
             <div class="password-input-area">
               <label>Senha</label>
               <input type="password" name="password" id="password-user-input" placeholder="Digite sua senha"
-<<<<<<< HEAD
                 class="input-required" required>
               <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
             </div>
@@ -51,65 +41,19 @@
               <label>Repita sua senha</label>
               <input type="password" placeholder="Repita sua senha" class="input-required" required
                 id="passsword-isEquals">
-=======
-                     class="input-required" required>
-              <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
-            </div>
-            
-            <div class="password-confirm-input-area">
-              <label>Confirmar Senha</label>
-              <input type="password" name="passwordConfirm" id="password-isEquals" placeholder="Confirme sua senha"
-                     class="input-required" required>
->>>>>>> 7e2a06dc656759f669404684732cf4dcf235fec2
               <span class="span-required">As senhas devem ser iguais</span>
             </div>
+
           </div>
-          
           <div class="button-area">
-<<<<<<< HEAD
             <input type="submit" id="btn" value="Cadastre-se">
-=======
-            <button type="button" id="btn">Cadastrar</button>
->>>>>>> 7e2a06dc656759f669404684732cf4dcf235fec2
           </div>
         </div>
+
       </form>
     </section>
   </main>
-  
-  <script>
-    const btn = document.getElementById("btn");
-    const registerForm = document.getElementById("register-form");
-    const emailInput = document.querySelector("#email-user-input");
-    const passwordInput = document.querySelector("#password-user-input");
-    const passwordConfirm = document.querySelector("#password-isEquals");
-    const spans = document.querySelectorAll(".span-required");
-
-    btn.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      function isPasswordTheSame() {
-        return passwordInput.value === passwordConfirm.value;
-      }
-
-      if (isPasswordTheSame()) {
-        const formData = new FormData(registerForm);
-        const data = Object.fromEntries(formData);
-
-        fetch("http://localhost:3000/register", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        })
-          .then(response => response.json())
-          .then(data => console.log(data));
-      } else {
-        // Tratar caso as senhas não sejam iguais
-      }
-    });
-  </script>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>

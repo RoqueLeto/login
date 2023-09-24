@@ -10,11 +10,20 @@ const mainPool = new Pool({
   database: "postgres", // Use o banco de dados "postgres" para criar o novo banco
 });
 
-const createDbQry = `CREATE DATABASE db_login_system`;
-const createTblQry = `CREATE TABLE IF NOT EXISTS accounts (
-  user_id serial PRIMARY KEY,
-  username VARCHAR(50) UNIQUE NOT NULL,
-  password VARCHAR(50) NOT NULL);`;
+//Scripts do banco de dados
+const createDbScript = "CREATE DATABASE db_login_system";
+const createTBScript = `CREATE TABLE IF NOT EXISTS "users" (
+    "id" SERIAL PRIMARY KEY,
+    "name" VARCHAR(100) NOT NULL,
+    "email" VARCHAR(55) UNIQUE NOT NULL,
+    "password" VARCHAR(100) NOT NULL
+);`;
+
+//const createDbQry = `CREATE DATABASE db_login_system`;
+//const createTblQry = `CREATE TABLE IF NOT EXISTS accounts (
+//  user_id serial PRIMARY KEY,
+//  username VARCHAR(50) UNIQUE NOT NULL,
+//  password VARCHAR(50) NOT NULL);`;
 
 (async () => {
   try {
@@ -31,7 +40,7 @@ const createTblQry = `CREATE TABLE IF NOT EXISTS accounts (
       password: process.env.PASSWORD,
       host: process.env.HOST,
       port: process.env.PORT,
-      database: "db_login_system",
+      database: process.env.DATABASE,
     });
 
     // Cria a tabela "accounts" se ela não existir
